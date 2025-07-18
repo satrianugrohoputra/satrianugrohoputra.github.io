@@ -1,11 +1,3 @@
-/**
-* Template Name: MyResume
-* Template URL: https://bootstrapmade.com/free-html-bootstrap-template-my-resume/
-* Updated: Jun 29 2024 with Bootstrap v5.3.3
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
-
 (function() {
   "use strict";
 
@@ -93,17 +85,22 @@
    * Init typed.js
    */
   const selectTyped = document.querySelector('.typed');
-  if (selectTyped) {
-    let typed_strings = selectTyped.getAttribute('data-typed-items');
-    typed_strings = typed_strings.split(',');
-    new Typed('.typed', {
-      strings: typed_strings,
-      loop: true,
-      typeSpeed: 100,
-      backSpeed: 50,
-      backDelay: 2000
-    });
-  }
+if (selectTyped) {
+  let typed_strings = selectTyped.getAttribute('data-typed-items');
+  typed_strings = typed_strings.split(',');
+  new Typed('.typed', {
+    strings: typed_strings,
+    loop: true,
+    typeSpeed: 60,         // lebih pelan agar tidak patah
+    backSpeed: 30,         // lebih natural saat menghapus
+    backDelay: 1500,       // jeda sebelum menghapus
+    startDelay: 300,       // waktu jeda awal
+    smartBackspace: true,  // hanya hapus kata yang berubah
+    showCursor: true,
+    cursorChar: '|',
+    autoInsertCss: true
+  });
+}
 
   /**
    * Initiate Pure Counter
